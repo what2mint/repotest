@@ -1,7 +1,7 @@
 {
     "extraPort": 3000,
-    "secret": "repotest2-umber.vercel.app",
-    "formUrl": "repotest2-umber.vercel.app",
+    "secret": "https://repotest2-umber.vercel.app/",
+    "formUrl": "https://repotest2-umber.vercel.app/",
 	"title": "The Character Creator",
 	"subtitle": "Build visually stunning avatars",
 	"description": "Create realistic characters for fun or for use in creative projects. Choose from a series of options to build your full body avatar in vector graphics.",
