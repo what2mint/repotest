@@ -1,0 +1,42 @@
+
+.sbl__option.new {
+  &:after {
+    content: url(../new.svg);
+    position: absolute;
+    right: -25px;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+  }
+   &:not(:focus):hover:after {
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+}
+
+.accordeon__section-label.new {
+  &:after {
+    content: url(../new.svg);
+    position: absolute;
+    right: -25px;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+  }
+  &:active:after {
+    animation: disappear 1.0s forwards;
+  }
+}
+
+.option__container.new {
+  &:after {
+    content: url(../new.svg);
+    position: absolute;
+    left: -2px;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+  }
+}
+
+@keyframes disappear {
+    0%   { opacity:1; }
+    100% { opacity:0; }
+}

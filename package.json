@@ -1,0 +1,53 @@
+{
+  "name": "charactercreator",
+  "version": "0.0.0",
+  "description": "Character Creator",
+  "scripts": {
+    "fix": "sed -i 's/http:\\/\\/localhost:4873\\//https:\\/\\/registry.npmjs.org\\//g' package-lock.json",
+    "dev": "node scripts/dev-server",
+    "start": "node scripts/server",
+    "clean": "rm -fr prod/* src/dist/*",
+    "build:html": "node scripts/ejs.js",
+    "build:js": "cat src/lib/*.js src/js/*.js > src/dist/all.js",
+    "build:css": "sass --no-source-map src/sass/main.scss src/dist/styles.css",
+    "build": "npm run build:css && npm run build:js && npm run build:html",
+    "lint": "standard src/js/*.js",
+    "prod": "npm run build && cp -a src/*.svg src/*.png src/favicon.ico src/robots.txt src/ads.txt src/layer src/credits src/index.html prod/",
+    "deploy:rsync": "npm run prod && rsync -vaPSz --delete --dry-run prod/* charactercreator.org:/var/www/html/charactercreator.org/",
+    "deploy:scp": "npm run prod && scp -Crvp prod/* charactercreator.org:/var/www/html/charactercreator.org/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubik23/charactercreator.git"
+  },
+  "keywords": [
+    "character",
+    "svg"
+  ],
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "author": "Frederic Guimont",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ubik23/charactercreator/issues"
+  },
+  "homepage": "https://github.com/ubik23/charactercreator#readme",
+  "devDependencies": {
+    "clean-css": "^5.2.0",
+    "ejs": "^3.1.5",
+    "esbuild": "^0.13.2",
+    "fastify-http-proxy": "^5.0.0",
+    "fastify-static": "^4.2.3",
+    "sass": "^1.42.1",
+    "standard": "^16.0.3"
+  },
+  "dependencies": {
+    "fastify": "^3.21.6",
+    "fastify-cookie": "^5.3.1",
+    "fastify-formbody": "^5.0.0",
+    "pm2": "^5.1.2",
+    "sharp": "^0.29.1"
+  }
+}
