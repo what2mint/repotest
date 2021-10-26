@@ -1,7 +1,7 @@
 {
     "extraPort": 3000,
-    "secret": "http://localhost:5000/fake-form",
-    "formUrl": "http://localhost:5000/fake-form",
+    "secret": "repotest2-umber.vercel.app",
+    "formUrl": "repotest2-umber.vercel.app",
 	"title": "The Character Creator",
 	"subtitle": "Build visually stunning avatars",
 	"description": "Create realistic characters for fun or for use in creative projects. Choose from a series of options to build your full body avatar in vector graphics.",
